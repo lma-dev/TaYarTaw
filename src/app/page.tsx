@@ -257,12 +257,6 @@ export default function InvitationPage() {
           </Card>
         </motion.div>
 
-        {/* Footer branding */}
-        <motion.div custom={12} variants={fadeUp} className="mt-6 text-center">
-          <p className="text-sm text-muted-foreground/40">
-            {data.footer}
-          </p>
-        </motion.div>
       </motion.div>
     </main>
   );

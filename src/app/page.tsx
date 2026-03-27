@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { CircleCheck, Mail, User, Video } from "lucide-react";
+import { Calendar, Mail, MessageCircle, User, Video } from "lucide-react";
+import data from "./data.json";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -100,14 +101,20 @@ export default function InvitationPage() {
                 </motion.div>
               </motion.div>
 
-              {/* Subtitle */}
+              {/* Subtitle & Monastery */}
               <motion.div
                 custom={2}
                 variants={fadeUp}
-                className="text-center mb-4"
+                className="text-center mb-2"
               >
                 <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground font-medium">
-                  Ashin Nwe Htwe
+                  {data.subtitle}
+                </p>
+                <p className="text-[11px] text-muted-foreground/70 mt-0.5">
+                  {data.subtitleDetail}
+                </p>
+                <p className="text-[11px] text-muted-foreground/60 mt-0.5">
+                  {data.monastery}
                 </p>
               </motion.div>
 
@@ -115,7 +122,7 @@ export default function InvitationPage() {
               <motion.div
                 custom={3}
                 variants={scaleIn}
-                className="flex justify-center mb-8"
+                className="flex justify-center mb-6"
               >
                 <motion.div
                   className="rounded-full"
@@ -127,55 +134,73 @@ export default function InvitationPage() {
                     className="gap-1.5 px-4 py-1.5 text-xs uppercase tracking-[0.15em] text-muted-foreground font-medium rounded-full"
                   >
                     <Mail className="size-4 text-green-500" />
-                    တရားပွဲဖိတ်ကြားလွှာ
+                    {data.badgeText}
                   </Badge>
                 </motion.div>
               </motion.div>
 
+              {/* Date */}
+              <motion.div custom={4} variants={fadeUp} className="mb-4">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <Calendar className="size-4 text-muted-foreground" />
+                  <p className="text-sm font-semibold text-foreground">
+                    {data.day} ({data.date})
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Activities */}
+              <motion.div custom={5} variants={fadeUp} className="mb-4">
+                <div className="space-y-1.5">
+                  {data.activities.map((activity) => (
+                    <p key={activity} className="text-sm text-muted-foreground text-center">
+                      {activity}
+                    </p>
+                  ))}
+                </div>
+              </motion.div>
+
               {/* Description */}
-              <motion.div custom={4} variants={fadeUp} className="mb-8">
+              <motion.div custom={6} variants={fadeUp} className="mb-4">
                 <p className="text-sm leading-relaxed text-muted-foreground text-center">
-                  အပတ်စဉ်ကျင်းပသော တရားပွဲ၌ တရားနာလိုသော ညီအကို မောင်နှမများ အား
-                  နိဗ္ဗာန်အကျိုးမျှော်၍ ဖိတ်ကြားအပ်ပါတယ်ခင်ဗျာ
+                  {data.description}
+                </p>
+              </motion.div>
+
+              {/* Invitation */}
+              <motion.div custom={7} variants={fadeUp} className="mb-6">
+                <p className="text-sm leading-relaxed text-muted-foreground text-center">
+                  {data.invitation}
                 </p>
               </motion.div>
 
               {/* Schedule */}
-              <motion.div custom={5} variants={fadeUp} className="mb-4">
+              <motion.div custom={8} variants={fadeUp} className="mb-4">
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2 font-medium text-center">
-                  အချိန်ဇယား
+                  {data.scheduleLabel}
                 </p>
                 <div className="grid grid-cols-2 gap-2">
-                  <motion.div
-                    className="rounded-xl bg-[oklch(0.96_0.005_250)] px-3 py-3 text-center"
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                  >
-                    <p className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground mb-1 font-medium">
-                      ဂျပန် (JST)
-                    </p>
-                    <p className="text-xl font-bold text-foreground tabular-nums">
-                      21:45
-                    </p>
-                  </motion.div>
-                  <motion.div
-                    className="rounded-xl bg-[oklch(0.96_0.005_250)] px-3 py-3 text-center"
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                  >
-                    <p className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground mb-1 font-medium">
-                      မြန်မာ (MMT)
-                    </p>
-                    <p className="text-xl font-bold text-foreground tabular-nums">
-                      19:15
-                    </p>
-                  </motion.div>
+                  {data.schedule.map((item) => (
+                    <motion.div
+                      key={item.label}
+                      className="rounded-xl bg-[oklch(0.96_0.005_250)] px-3 py-3 text-center"
+                      whileHover={{ scale: 1.03 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                    >
+                      <p className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground mb-1 font-medium">
+                        {item.label}
+                      </p>
+                      <p className="text-xl font-bold text-foreground tabular-nums">
+                        {item.time}
+                      </p>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
 
               {/* Separator */}
               <motion.div
-                custom={7}
+                custom={9}
                 variants={drawLine}
                 className="origin-center"
               >
@@ -184,41 +209,58 @@ export default function InvitationPage() {
 
               {/* Meeting Links */}
               <motion.div
-                custom={8}
+                custom={10}
                 variants={fadeUp}
                 className="grid grid-cols-2 gap-2 mb-4"
               >
-                <motion.a
-                  href="https://meet.google.com/cwd-hxmc-pmh"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-primary py-3 px-3"
-                  whileHover={{ scale: 1.02, y: -1 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                >
-                  <Video className="size-4 text-primary-foreground/70" />
-                  <span className="text-sm font-semibold tracking-wide uppercase text-primary-foreground">
-                    ကျင်းပရာနေရာ ၁
-                  </span>
-                </motion.a>
-                <motion.a
-                  href="#"
-                  className="flex items-center justify-center gap-2 rounded-xl border border-border bg-white py-3 px-3"
-                  whileHover={{ scale: 1.02, y: -1 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                >
-                  <Video className="size-4 text-muted-foreground" />
-                  <span className="text-sm font-semibold tracking-wide uppercase text-foreground">
-                    ကျင်းပရာနေရာ ၂
-                  </span>
-                </motion.a>
+                {data.meetingLinks.map((link) => (
+                  <motion.a
+                    key={link.label}
+                    href={link.url}
+                    className={
+                      link.primary
+                        ? "flex items-center justify-center gap-2 rounded-xl bg-primary py-3 px-3"
+                        : "flex items-center justify-center gap-2 rounded-xl border border-border bg-white py-3 px-3"
+                    }
+                    whileHover={{ scale: 1.02, y: -1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  >
+                    <Video
+                      className={
+                        link.primary
+                          ? "size-4 text-primary-foreground/70"
+                          : "size-4 text-muted-foreground"
+                      }
+                    />
+                    <span
+                      className={
+                        link.primary
+                          ? "text-sm font-semibold tracking-wide uppercase text-primary-foreground"
+                          : "text-sm font-semibold tracking-wide uppercase text-foreground"
+                      }
+                    >
+                      {link.label}
+                    </span>
+                  </motion.a>
+                ))}
+              </motion.div>
+              {/* Contact Note */}
+              <motion.div custom={11} variants={fadeUp} className="mt-4">
+                <div className="flex items-start justify-center gap-2 rounded-xl bg-[oklch(0.96_0.005_250)] px-4 py-3">
+                  <MessageCircle className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                  <p className="text-xs leading-relaxed text-muted-foreground">
+                    {data.contactNote}
+                  </p>
+                </div>
               </motion.div>
             </CardContent>
           </Card>
         </motion.div>
 
         {/* Footer branding */}
-        <motion.div custom={9} variants={fadeUp} className="mt-6 text-center">
+        <motion.div custom={12} variants={fadeUp} className="mt-6 text-center">
           <p className="text-sm text-muted-foreground/40">
-            နွေဦးလွတ်မြောက်ရေး နှင်းဆီ မှ ကျင်းပသည်
+            {data.footer}
           </p>
         </motion.div>
       </motion.div>

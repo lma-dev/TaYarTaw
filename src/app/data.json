@@ -24,13 +24,8 @@
   "meetingLinks": [
     {
       "label": "ကျင်းပရာနေရာ ၁",
-      "url": "https://meet.google.com/fah-vrgj-feu",
+      "url": "https://meet.google.com/cih-aiqd-qgq",
       "primary": true
-    },
-    {
-      "label": "ကျင်းပရာနေရာ ၂",
-      "url": "#",
-      "primary": false
     }
   ],
   "footer": "နွေဦးလွတ်မြောက်ရေး နှင်းဆီ မှ ကျင်းပသည်"

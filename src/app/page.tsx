@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Mail, MessageCircle, User, Video } from "lucide-react";
+import { Calendar, Mail, MessageSquare, User, Video } from "lucide-react";
 import data from "./data.json";
 
 const fadeUp = {
@@ -149,17 +149,6 @@ export default function InvitationPage() {
                 </div>
               </motion.div>
 
-              {/* Activities */}
-              <motion.div custom={5} variants={fadeUp} className="mb-4">
-                <div className="space-y-1.5">
-                  {data.activities.map((activity) => (
-                    <p key={activity} className="text-sm text-muted-foreground text-center">
-                      {activity}
-                    </p>
-                  ))}
-                </div>
-              </motion.div>
-
               {/* Description */}
               <motion.div custom={6} variants={fadeUp} className="mb-4">
                 <p className="text-sm leading-relaxed text-muted-foreground text-center">
@@ -244,14 +233,21 @@ export default function InvitationPage() {
                   </motion.a>
                 ))}
               </motion.div>
-              {/* Contact Note */}
-              <motion.div custom={11} variants={fadeUp} className="mt-4">
-                <div className="flex items-start justify-center gap-2 rounded-xl bg-[oklch(0.96_0.005_250)] px-4 py-3">
-                  <MessageCircle className="size-4 text-muted-foreground mt-0.5 shrink-0" />
-                  <p className="text-xs leading-relaxed text-muted-foreground">
-                    {data.contactNote}
-                  </p>
-                </div>
+              {/* Feedback Form */}
+              <motion.div custom={11} variants={fadeUp} className="mt-3">
+                <motion.a
+                  href={data.feedbackForm.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-border bg-[oklch(0.96_0.005_250)] py-3 px-4"
+                  whileHover={{ scale: 1.02, y: -1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                >
+                  <MessageSquare className="size-4 text-muted-foreground" />
+                  <span className="text-xs font-medium tracking-wide text-muted-foreground">
+                    {data.feedbackForm.label}
+                  </span>
+                </motion.a>
               </motion.div>
             </CardContent>
           </Card>

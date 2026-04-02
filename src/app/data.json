@@ -19,14 +19,15 @@
       "time": "08:00"
     }
   ],
+  "meetingLinksTitle": "Meeting ဝင်ရောက်ရန်",
   "meetingLinks": [
     {
-      "label": "Meeting Link ၁ ဝင်ရောက်ရန်",
+      "label": "Link ၁",
       "url": "https://meet.google.com/mnk-pqob-xmy",
       "primary": true
     },
     {
-      "label": "Meeting Link ၂ ဝင်ရောက်ရန်",
+      "label": "Link ၂",
       "url": "https://meet.google.com/isp-bpku-zin",
       "primary": false
     }

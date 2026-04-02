@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip3 install:*)",
+      "Bash(node -e \"console.log\\('node ok'\\)\")",
+      "Bash(npm list:*)",
+      "Bash(npx --yes puppeteer --version)",
+      "Bash(grep -E \"\\\\.\\(js|ts|json|css\\)$|^d\")",
+      "Bash(npm uninstall:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

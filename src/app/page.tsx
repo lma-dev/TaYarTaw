@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Mail, MessageSquare, User, Video } from "lucide-react";
+import { Calendar, HelpCircle, Mail, MessageSquare, User, Video } from "lucide-react";
 import data from "./data.json";
 
 const fadeUp = {
@@ -85,19 +85,19 @@ export default function InvitationPage() {
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
           <Card className="border-0 bg-white shadow-2xl shadow-black/8 rounded-2xl overflow-hidden ring-0">
-            <CardContent className="px-8 pt-10 pb-8">
+            <CardContent className="px-7 pt-8 pb-7">
               {/* Avatar */}
               <motion.div
                 custom={1}
                 variants={scaleIn}
-                className="flex justify-center mb-3"
+                className="flex justify-center mb-2.5"
               >
                 <motion.div
-                  className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-muted ring-2 ring-border"
+                  className="flex h-18 w-18 items-center justify-center overflow-hidden rounded-full bg-muted ring-2 ring-border"
                   whileHover={{ scale: 1.08, rotate: 3 }}
                   transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
-                  <User className="size-10 text-muted-foreground" />
+                  <User className="size-9 text-muted-foreground" />
                 </motion.div>
               </motion.div>
 
@@ -105,7 +105,7 @@ export default function InvitationPage() {
               <motion.div
                 custom={2}
                 variants={fadeUp}
-                className="text-center mb-2"
+                className="text-center mb-3"
               >
                 <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground font-medium">
                   {data.subtitle}
@@ -122,7 +122,7 @@ export default function InvitationPage() {
               <motion.div
                 custom={3}
                 variants={scaleIn}
-                className="flex justify-center mb-6"
+                className="flex justify-center mb-5"
               >
                 <motion.div
                   className="rounded-full"
@@ -140,8 +140,8 @@ export default function InvitationPage() {
               </motion.div>
 
               {/* Date */}
-              <motion.div custom={4} variants={fadeUp} className="mb-4">
-                <div className="flex items-center justify-center gap-2 mb-2">
+              <motion.div custom={4} variants={fadeUp} className="mb-3">
+                <div className="flex items-center justify-center gap-2">
                   <Calendar className="size-4 text-muted-foreground" />
                   <p className="text-sm font-semibold text-foreground">
                     {data.day} ({data.date})
@@ -150,21 +150,21 @@ export default function InvitationPage() {
               </motion.div>
 
               {/* Description */}
-              <motion.div custom={6} variants={fadeUp} className="mb-4">
+              <motion.div custom={5} variants={fadeUp} className="mb-3">
                 <p className="text-sm leading-relaxed text-muted-foreground text-center">
                   {data.description}
                 </p>
               </motion.div>
 
               {/* Invitation */}
-              <motion.div custom={7} variants={fadeUp} className="mb-6">
+              <motion.div custom={6} variants={fadeUp} className="mb-5">
                 <p className="text-sm leading-relaxed text-muted-foreground text-center">
                   {data.invitation}
                 </p>
               </motion.div>
 
               {/* Schedule */}
-              <motion.div custom={8} variants={fadeUp} className="mb-4">
+              <motion.div custom={7} variants={fadeUp} className="mb-5">
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2 font-medium text-center">
                   {data.scheduleLabel}
                 </p>
@@ -172,11 +172,11 @@ export default function InvitationPage() {
                   {data.schedule.map((item) => (
                     <motion.div
                       key={item.label}
-                      className="rounded-xl bg-[oklch(0.96_0.005_250)] px-3 py-3 text-center"
+                      className="rounded-xl bg-[oklch(0.96_0.005_250)] px-3 py-2.5 text-center"
                       whileHover={{ scale: 1.03 }}
                       transition={{ type: "spring", stiffness: 400, damping: 20 }}
                     >
-                      <p className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground mb-1 font-medium">
+                      <p className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground mb-0.5 font-medium">
                         {item.label}
                       </p>
                       <p className="text-xl font-bold text-foreground tabular-nums">
@@ -189,57 +189,59 @@ export default function InvitationPage() {
 
               {/* Separator */}
               <motion.div
-                custom={9}
+                custom={8}
                 variants={drawLine}
                 className="origin-center"
               >
-                <Separator className="my-4 bg-border/60" />
+                <Separator className="my-3 bg-border/60" />
               </motion.div>
 
               {/* Meeting Links */}
-              <motion.div
-                custom={10}
-                variants={fadeUp}
-                className="grid grid-cols-2 gap-2 mb-4"
-              >
-                {data.meetingLinks.map((link) => (
-                  <motion.a
-                    key={link.label}
-                    href={link.url}
-                    className={
-                      link.primary
-                        ? "flex items-center justify-center gap-2 rounded-xl bg-primary py-3 px-3"
-                        : "flex items-center justify-center gap-2 rounded-xl border border-border bg-white py-3 px-3"
-                    }
-                    whileHover={{ scale: 1.02, y: -1 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                  >
-                    <Video
+              <motion.div custom={9} variants={fadeUp} className="mb-3">
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2 font-medium text-center">
+                  {data.meetingLinksTitle}
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  {data.meetingLinks.map((link) => (
+                    <motion.a
+                      key={link.label}
+                      href={link.url}
                       className={
                         link.primary
-                          ? "size-4 text-primary-foreground/70"
-                          : "size-4 text-muted-foreground"
+                          ? "flex items-center justify-center gap-2 rounded-xl bg-emerald-600 py-2.5 px-4"
+                          : "flex items-center justify-center gap-2 rounded-xl bg-emerald-50 border border-emerald-200 py-2.5 px-4"
                       }
-                    />
-                    <span
-                      className={
-                        link.primary
-                          ? "text-sm font-semibold tracking-wide uppercase text-primary-foreground"
-                          : "text-sm font-semibold tracking-wide uppercase text-foreground"
-                      }
+                      whileHover={{ scale: 1.02, y: -1 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 20 }}
                     >
-                      {link.label}
-                    </span>
-                  </motion.a>
-                ))}
+                      <Video
+                        className={
+                          link.primary
+                            ? "size-4 text-white/80"
+                            : "size-4 text-emerald-600"
+                        }
+                      />
+                      <span
+                        className={
+                          link.primary
+                            ? "text-sm font-semibold text-white"
+                            : "text-sm font-semibold text-emerald-700"
+                        }
+                      >
+                        {link.label}
+                      </span>
+                    </motion.a>
+                  ))}
+                </div>
               </motion.div>
+
               {/* Feedback Form */}
-              <motion.div custom={11} variants={fadeUp} className="mt-3">
+              <motion.div custom={10} variants={fadeUp}>
                 <motion.a
                   href={data.feedbackForm.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl border border-border bg-[oklch(0.96_0.005_250)] py-3 px-4"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-border bg-[oklch(0.96_0.005_250)] py-2.5 px-4"
                   whileHover={{ scale: 1.02, y: -1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 >
@@ -249,6 +251,18 @@ export default function InvitationPage() {
                   </span>
                 </motion.a>
               </motion.div>
+
+              {/* Guide Link */}
+              <motion.div custom={11} variants={fadeUp} className="mt-3">
+                <a
+                  href="/guide"
+                  className="flex items-center justify-center gap-1.5 py-1 text-[11px] text-muted-foreground/50 hover:text-muted-foreground transition-colors"
+                >
+                  <HelpCircle className="size-3" />
+                  ဝင်ရောက်နည်း လမ်းညွှန်
+                </a>
+              </motion.div>
+
             </CardContent>
           </Card>
         </motion.div>

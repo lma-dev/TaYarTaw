@@ -23,12 +23,12 @@
   "meetingLinks": [
     {
       "label": "Link ၁",
-      "url": "https://meet.google.com/mnk-pqob-xmy",
+      "url": "https://meet.google.com/mcq-hqrs-azg",
       "primary": true
     },
     {
       "label": "Link ၂",
-      "url": "https://meet.google.com/isp-bpku-zin",
+      "url": "https://meet.google.com/rky-xptk-nto",
       "primary": false
     }
   ],

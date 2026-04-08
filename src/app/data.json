@@ -3,7 +3,7 @@
   "subtitleDetail": "Ph.D(University of Kelaniya, Sri Lanka)",
   "monastery": "ရန်ကုန်မြို့မေတ္တာသုခသာသနာ့ရိပ်သာ ဆရာတော်",
   "badgeText": "တရားပွဲဖိတ်ကြားလွှာ",
-  "date": "5.4.2026",
+  "date": "13.4.2026",
   "day": "တနင်္ဂနွေနေ့",
   "greeting": "ဓမ္မမိတ်ဆွေများအားလုံး မင်္ဂလာပါခင်ဗျာ",
   "description": "ကိုယ်စိတ်နှလုံး အေးချမ်းစေမည့် တရားရေအေးအမြိတ်ဆေးများကို Google Meeting မှတဆင့် ဟောကြားတော်မူမည် ဖြစ်ပါတယ်ခင်ဗျာ။",
@@ -12,23 +12,23 @@
   "schedule": [
     {
       "label": "ဂျပန် (JST)",
-      "time": "10:30"
+      "time": "10:00"
     },
     {
       "label": "မြန်မာ (MMT)",
-      "time": "08:00"
+      "time": "07:30"
     }
   ],
   "meetingLinksTitle": "Meeting ဝင်ရောက်ရန်",
   "meetingLinks": [
     {
       "label": "Link ၁",
-      "url": "https://meet.google.com/mcq-hqrs-azg",
+      "url": "https://meet.google.com/syg-rgqd-gwv",
       "primary": true
     },
     {
       "label": "Link ၂",
-      "url": "https://meet.google.com/rky-xptk-nto",
+      "url": "https://meet.google.com/hzs-dedn-xtt",
       "primary": false
     }
   ],

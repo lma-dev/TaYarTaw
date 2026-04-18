@@ -2,8 +2,8 @@
   "subtitle": "ဒေါက်တာ အရှင်ပညိန္ဒြိယ(မေတ္တာသုခ)",
   "subtitleDetail": "Ph.D(University of Kelaniya, Sri Lanka)",
   "monastery": "ရန်ကုန်မြို့မေတ္တာသုခသာသနာ့ရိပ်သာ ဆရာတော်",
-  "badgeText": "(5)ကြိမ်မြောက် တရားပွဲဖိတ်ကြားလွှာ",
-  "date": "13.4.2026",
+  "badgeText": "(၆)ကြိမ်မြောက် တရားပွဲဖိတ်ကြားလွှာ",
+  "date": "19.4.2026",
   "day": "တနင်္ဂနွေနေ့",
   "greeting": "ဓမ္မမိတ်ဆွေများအားလုံး မင်္ဂလာပါခင်ဗျာ",
   "description": "ကိုယ်စိတ်နှလုံး အေးချမ်းစေမည့် တရားရေအေးအမြိတ်ဆေးများကို Google Meeting မှတဆင့် ဟောကြားတော်မူမည် ဖြစ်ပါတယ်ခင်ဗျာ။",
@@ -23,12 +23,12 @@
   "meetingLinks": [
     {
       "label": "Link ၁",
-      "url": "https://meet.google.com/syg-rgqd-gwv",
+      "url": "https://meet.google.com/dtm-hkjp-cah",
       "primary": true
     },
     {
       "label": "Link ၂",
-      "url": "https://meet.google.com/hzs-dedn-xtt",
+      "url": "https://meet.google.com/yga-ghut-cxx",
       "primary": false
     }
   ],

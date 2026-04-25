@@ -12,23 +12,23 @@
   "schedule": [
     {
       "label": "ဂျပန် (JST)",
-      "time": "09:00"
+      "time": "10:00"
     },
     {
       "label": "မြန်မာ (MMT)",
-      "time": "06:30"
+      "time": "07:30"
     }
   ],
   "meetingLinksTitle": "Meeting ဝင်ရောက်ရန်",
   "meetingLinks": [
     {
       "label": "Link ၁",
-      "url": "https://meet.google.com/qxh-frxh-iks",
+      "url": "https://meet.google.com/vfc-ufea-xhd",
       "primary": true
     },
     {
       "label": "Link ၂",
-      "url": "https://meet.google.com/qzo-mmrt-xgu",
+      "url": "https://meet.google.com/eqj-msau-tge",
       "primary": false
     }
   ],

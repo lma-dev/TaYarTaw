@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, HelpCircle, Mail, MessageSquare, User, Video } from "lucide-react";
+import { Calendar, HelpCircle, Mail, MessageSquare, Video } from "lucide-react";
+import { PetalFall } from "@/components/petal-fall";
+import { BodhiTree } from "@/components/bodhi-tree";
+import { BuddhaIcon } from "@/components/buddha-icon";
 import data from "./data.json";
 
 const fadeUp = {
@@ -73,6 +76,19 @@ export default function InvitationPage() {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
+      {/* Bodhi tree — the tree of enlightenment, resting behind the card */}
+      <motion.div
+        className="pointer-events-none fixed inset-x-0 top-0 z-0 flex justify-center"
+        initial={{ opacity: 0, y: -12 }}
+        animate={{ opacity: 0.22, y: 0 }}
+        transition={{ duration: 1.6, ease: "easeOut" }}
+      >
+        <BodhiTree className="w-[min(880px,150vw)]" />
+      </motion.div>
+
+      {/* Gently drifting lotus petals & Bodhi leaves */}
+      <PetalFall />
+
       <motion.div
         initial="hidden"
         animate="visible"
@@ -93,11 +109,11 @@ export default function InvitationPage() {
                 className="flex justify-center mb-2.5"
               >
                 <motion.div
-                  className="flex h-18 w-18 items-center justify-center overflow-hidden rounded-full bg-muted ring-2 ring-border"
+                  className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-linear-to-b from-amber-50 to-orange-50 ring-2 ring-amber-200/70"
                   whileHover={{ scale: 1.08, rotate: 3 }}
                   transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
-                  <User className="size-9 text-muted-foreground" />
+                  <BuddhaIcon className="size-16" />
                 </motion.div>
               </motion.div>
 
